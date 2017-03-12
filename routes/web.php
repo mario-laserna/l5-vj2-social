@@ -15,14 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/add', function () {
-    return \App\User::first()->add_friend(2);
-});
-
-Route::get('/accept', function () {
-    return \App\User::find(2)->accept_friend(1);
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
