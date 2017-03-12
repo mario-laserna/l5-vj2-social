@@ -1,5 +1,6 @@
 <?php
 
+use App\Profile;
 use App\User;
 use Illuminate\Database\Seeder;
 
@@ -13,7 +14,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $name = 'Mario Laserna';
-        User::create([
+        $user = User::create([
             'name' => $name,
             'email' => 'laserna.mario@gmail.com',
             'slug' => str_slug($name),
@@ -24,5 +25,13 @@ class UsersTableSeeder extends Seeder
         ]);
 
         factory('App\User', 5)->create();
+
+        $users = User::all();
+        foreach ($users as $u)
+        {
+            Profile::create([
+                'user_id' => $u->id,
+            ]);
+        }
     }
 }

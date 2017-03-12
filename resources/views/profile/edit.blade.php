@@ -18,12 +18,12 @@
 
                         <div class="form-group">
                             <label for="location">Location</label>
-                            <input type="text" name="location" value="{{ $info->location }}" class="form-control">
+                            <input type="text" name="location" value="{{ $info->location }}" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                             <label for="about">About me</label>
-                            <textarea name="about" class="form-control" cols="30" rows="10">{{ $info->about }}</textarea>
+                            <textarea name="about" class="form-control" cols="30" rows="10" required>{{ $info->about }}</textarea>
                         </div>
 
                         <div class="form-group">
