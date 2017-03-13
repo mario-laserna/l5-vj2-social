@@ -4,6 +4,7 @@ namespace App\Traits;
 use App\Friendship;
 use App\User;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 trait Friendable
 {
@@ -27,10 +28,10 @@ trait Friendable
         ]);
 
         if($friendship) {
-            return response()->json($friendship, 200);
+            return true;
         }
 
-        return response()->json('fail', 501);
+        return false;
     }
 
     public function accept_friend($requester)
@@ -48,10 +49,10 @@ trait Friendable
                'status' => true
             ]);
 
-            return response()->json('ok', 200);
+            return 'true';
         }
 
-        return response()->json('fail', 501);
+        return 'false';
     }
 
     public function friends()
@@ -126,7 +127,7 @@ trait Friendable
 
         foreach ($friendships as $friendship)
         {
-            array_push($users, User::find($friendship->requester));
+            array_push($users, User::find($friendship->user_requested));
         }
 
         return $users;

@@ -16,11 +16,19 @@
                     </p>
                     <p class="text-center" style="padding-top: 5px">
                         @if(Auth::id() == $user->id)
-                            <a href="{{ route('profile.edit', $user->slug) }}" class="btn btn-lg btn-info">Edit profile</a>
+                            <a href="{{ route('profile.edit', $user->slug) }}" class="btn btn-info">Edit profile</a>
                         @endif
                     </p>
                 </div>
             </div>
+
+            @if(Auth::id() != $user->id)
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <friend :profile_user_id="{{ $user->id }}"></friend>
+                    </div>
+                </div>
+            @endif
 
             <div class="panel panel-default">
                 <div class="panel-heading">
