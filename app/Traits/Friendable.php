@@ -11,7 +11,7 @@ trait Friendable
     public function add_friend($user_requested_id)
     {
         if($this->id === $user_requested_id) {
-            return false;
+            return 'false';
         }
 
         if($this->has_pending_friend_requests_sent_to($user_requested_id)){
@@ -28,16 +28,16 @@ trait Friendable
         ]);
 
         if($friendship) {
-            return true;
+            return 'true';
         }
 
-        return false;
+        return 'false';
     }
 
     public function accept_friend($requester)
     {
         if(!$this->has_pending_friend_requests_from($requester)){
-            return false;
+            return 'false';
         }
 
         $friendship = Friendship::where('requester', $requester)
@@ -105,6 +105,7 @@ trait Friendable
 
     public function is_friends_with($user_id)
     {
+        Log::info('array ', ['a' => $this->friends_ids()]);
         if(in_array($user_id, $this->friends_ids())){
             return true;
         }
