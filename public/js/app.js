@@ -47859,11 +47859,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['id'],
     methods: {
         listen: function listen() {
-            var canal = 'App.User.' + this.id;
-            console.log(canal);
-            Echo.private(canal).notification(function (notification) {
+            Echo.private('App.User.' + this.id).notification(function (notification) {
                 console.log(notification);
-                alert('new notification');
+                noty({
+                    type: 'success',
+                    layout: 'bottomLeft',
+                    text: notification.message
+                });
+                document.getElementById("noty_audio").play();
             });
         }
     }

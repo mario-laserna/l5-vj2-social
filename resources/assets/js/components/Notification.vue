@@ -17,7 +17,12 @@
                 Echo.private('App.User.' + this.id)
                     .notification( (notification) => {
                         console.log(notification);
-                        alert('new notification');
+                        noty({
+                            type: 'success',
+                            layout: 'bottomLeft',
+                            text:  notification.message,
+                        });
+                        document.getElementById("noty_audio").play();
                     });
             }
         }
