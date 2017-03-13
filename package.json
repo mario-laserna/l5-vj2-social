@@ -15,5 +15,10 @@
     "lodash": "^4.17.4",
     "vue": "^2.1.10",
     "noty": "^2.4.1"
+  },
+  "dependencies": {
+    "laravel-echo": "^1.2.6",
+    "pusher-js": "^4.0.0",
+    "react-native": "^0.42.0"
   }
 }

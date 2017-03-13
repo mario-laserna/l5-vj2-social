@@ -40,6 +40,11 @@
                         console.log(r);
                         if(r.data) {
                             this.status = 'waiting';
+                            noty({
+                               type: 'success',
+                                layout: 'bottomLeft',
+                                text: 'Friend request sent'
+                            });
                             this.loading = false;
                         }
                     });
@@ -53,6 +58,11 @@
                         console.log(r);
                         if(r.data) {
                             this.status = 'friends';
+                            noty({
+                                type: 'success',
+                                layout: 'bottomLeft',
+                                text: 'You are now friends.'
+                            });
                             this.loading = false;
                         }
                     });
