@@ -22,6 +22,9 @@
                             layout: 'bottomLeft',
                             text:  notification.message,
                         });
+
+                        this.$store.commit('add_not', notification);
+
                         document.getElementById("noty_audio").play();
                     });
             }

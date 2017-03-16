@@ -45,6 +45,7 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::check())
                         &nbsp;<li><a href="{{ route('profile', Auth::user()->slug) }}">Profile</a></li>
+                        <unread></unread>
                         @endif
                     </ul>
 

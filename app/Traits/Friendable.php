@@ -105,7 +105,6 @@ trait Friendable
 
     public function is_friends_with($user_id)
     {
-        Log::info('array ', ['a' => $this->friends_ids()]);
         if(in_array($user_id, $this->friends_ids())){
             return true;
         }

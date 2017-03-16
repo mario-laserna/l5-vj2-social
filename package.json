@@ -19,6 +19,7 @@
   "dependencies": {
     "laravel-echo": "^1.2.6",
     "pusher-js": "^4.0.0",
-    "react-native": "^0.42.0"
+    "react-native": "^0.42.0",
+    "vuex": "^2.2.1"
   }
 }
